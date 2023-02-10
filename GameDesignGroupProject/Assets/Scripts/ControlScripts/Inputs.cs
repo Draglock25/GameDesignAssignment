@@ -80,6 +80,42 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Reload"",
+                    ""type"": ""Button"",
+                    ""id"": ""19e4d479-4f7f-4007-9654-36bb6896bf99"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Holster"",
+                    ""type"": ""Button"",
+                    ""id"": ""c8bf9958-6092-4600-b1a3-e628df9a7369"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwapWeapon1"",
+                    ""type"": ""Button"",
+                    ""id"": ""f680ff11-7ab4-4ccf-9798-0103e8a163e4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwapWeapon2"",
+                    ""type"": ""Button"",
+                    ""id"": ""e63b352e-d805-48c9-80df-255cf2de4ff2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -192,6 +228,50 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                     ""action"": ""Item1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""02916353-fc0a-4c10-bb25-9810e7a09224"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": ""Tap"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reload"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bc37d54d-c4b6-4d20-af11-ba4fc029cb6b"",
+                    ""path"": ""<Keyboard>/h"",
+                    ""interactions"": ""Tap"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Holster"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""23d0fe39-d834-45f5-b82a-40fc5fe1bc87"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": ""Tap"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwapWeapon1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""329f830d-1b6f-4c28-878b-6499a51ebc76"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": ""Tap"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwapWeapon2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -206,6 +286,10 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_CamControl = m_Player.FindAction("CamControl", throwIfNotFound: true);
         m_Player_Item1 = m_Player.FindAction("Item1", throwIfNotFound: true);
+        m_Player_Reload = m_Player.FindAction("Reload", throwIfNotFound: true);
+        m_Player_Holster = m_Player.FindAction("Holster", throwIfNotFound: true);
+        m_Player_SwapWeapon1 = m_Player.FindAction("SwapWeapon1", throwIfNotFound: true);
+        m_Player_SwapWeapon2 = m_Player.FindAction("SwapWeapon2", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -271,6 +355,10 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_CamControl;
     private readonly InputAction m_Player_Item1;
+    private readonly InputAction m_Player_Reload;
+    private readonly InputAction m_Player_Holster;
+    private readonly InputAction m_Player_SwapWeapon1;
+    private readonly InputAction m_Player_SwapWeapon2;
     public struct PlayerActions
     {
         private @Inputs m_Wrapper;
@@ -281,6 +369,10 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @CamControl => m_Wrapper.m_Player_CamControl;
         public InputAction @Item1 => m_Wrapper.m_Player_Item1;
+        public InputAction @Reload => m_Wrapper.m_Player_Reload;
+        public InputAction @Holster => m_Wrapper.m_Player_Holster;
+        public InputAction @SwapWeapon1 => m_Wrapper.m_Player_SwapWeapon1;
+        public InputAction @SwapWeapon2 => m_Wrapper.m_Player_SwapWeapon2;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -308,6 +400,18 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                 @Item1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItem1;
                 @Item1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItem1;
                 @Item1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItem1;
+                @Reload.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
+                @Reload.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
+                @Reload.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
+                @Holster.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHolster;
+                @Holster.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHolster;
+                @Holster.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHolster;
+                @SwapWeapon1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwapWeapon1;
+                @SwapWeapon1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwapWeapon1;
+                @SwapWeapon1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwapWeapon1;
+                @SwapWeapon2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwapWeapon2;
+                @SwapWeapon2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwapWeapon2;
+                @SwapWeapon2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwapWeapon2;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -330,6 +434,18 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                 @Item1.started += instance.OnItem1;
                 @Item1.performed += instance.OnItem1;
                 @Item1.canceled += instance.OnItem1;
+                @Reload.started += instance.OnReload;
+                @Reload.performed += instance.OnReload;
+                @Reload.canceled += instance.OnReload;
+                @Holster.started += instance.OnHolster;
+                @Holster.performed += instance.OnHolster;
+                @Holster.canceled += instance.OnHolster;
+                @SwapWeapon1.started += instance.OnSwapWeapon1;
+                @SwapWeapon1.performed += instance.OnSwapWeapon1;
+                @SwapWeapon1.canceled += instance.OnSwapWeapon1;
+                @SwapWeapon2.started += instance.OnSwapWeapon2;
+                @SwapWeapon2.performed += instance.OnSwapWeapon2;
+                @SwapWeapon2.canceled += instance.OnSwapWeapon2;
             }
         }
     }
@@ -342,5 +458,9 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnCamControl(InputAction.CallbackContext context);
         void OnItem1(InputAction.CallbackContext context);
+        void OnReload(InputAction.CallbackContext context);
+        void OnHolster(InputAction.CallbackContext context);
+        void OnSwapWeapon1(InputAction.CallbackContext context);
+        void OnSwapWeapon2(InputAction.CallbackContext context);
     }
 }
