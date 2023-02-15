@@ -20,7 +20,7 @@ public class PlayerInput : MonoBehaviour
     public float distanceToGround = 0.4f;
     public LayerMask groundMask;
     private bool isGrounded;
-    public int number = -1;
+    public int number = 0;
 
     void Awake()
     {
@@ -71,10 +71,40 @@ public class PlayerInput : MonoBehaviour
 
     private void item()
     {
-        if (controls.Player.Item1.IsPressed())
+        if (controls.Player.Item1.triggered)
+        {
+            number = 0;
+            returnNumber();
+        }else if (controls.Player.Item2.triggered)
         {
             number = 1;
+            returnNumber();
+        }else if (controls.Player.Item3.triggered)
+        {
+            number = 2;
+            returnNumber();
         }
+        else if (controls.Player.Item4.triggered)
+        {
+            number = 3;
+            returnNumber();
+        }
+        else if (controls.Player.Item5.triggered)
+        {
+            number = 4;
+            returnNumber();
+        }
+        else if (controls.Player.Item6.triggered)
+        {
+            number = 5;
+            returnNumber();
+        }
+        else if (controls.Player.Item7.triggered)
+        {
+            number = 6;
+            returnNumber();
+        }
+
     }
 
     public int returnNumber()

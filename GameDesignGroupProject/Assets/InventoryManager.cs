@@ -10,18 +10,19 @@ public class InventoryManager : MonoBehaviour
     public GameObject inventoryItemPrefab;
 
     public int number = 0;
-    int selectedSlot = -1;
+    int selectedSlot = 1;
     private Inputs m_Inputs;
     public PlayerInput playerInput;
 
     private void Awake()
     {
         m_Inputs = new Inputs();
-        ChangeSelectedSlot(0);
+        ChangeSelectedSlot(selectedSlot);
     }
     private void Update()
     {
         number = playerInput.returnNumber();
+        ChangeSelectedSlot(number);
     }
 
     
@@ -29,7 +30,7 @@ public class InventoryManager : MonoBehaviour
     {
         if(selectedSlot >= 0)
         {
-            inventorySlots[selectedSlot].Select();
+            inventorySlots[selectedSlot].Deselect();
         }
 
         inventorySlots[newValue].Select();
@@ -70,5 +71,29 @@ public class InventoryManager : MonoBehaviour
         GameObject newItemGo = Instantiate(inventoryItemPrefab, slot.transform);
         InventoryItem inventoryItem = newItemGo.GetComponent<InventoryItem>();
         inventoryItem.InitialiseItem(item);
+    }
+
+    public Item GetSelectedItem(bool use)
+    {
+        InventorySlot slot = inventorySlots[selectedSlot];
+        InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+        if (itemInSlot != null)
+        {
+            Item item = itemInSlot.item;
+            if(use == true)
+            {
+                itemInSlot.count--;
+                if(itemInSlot.count <= 0)
+                {
+                    Destroy(itemInSlot.gameObject);
+                }
+                else
+                {
+                    itemInSlot.refreshCount();
+                }
+            }
+            return item;
+        }
+        return null;
     }
 }
