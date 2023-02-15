@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -22,6 +23,10 @@ public class PlayerInput : MonoBehaviour
     private bool isGrounded;
     public int number = 0;
 
+    public CinemachineFreeLook freeLook;
+    public GameObject inventPanel;
+    public bool panelBool;
+
     void Awake()
     {
         controls = new Inputs();
@@ -32,10 +37,15 @@ public class PlayerInput : MonoBehaviour
 
     void Update()
     {
+        
+        if (panelBool == false)
+        {
+            PlayerMovement();
+            Jump();
+        }
         Gravity();
-        PlayerMovement();
-        Jump();
         item();
+        openInvent();
     }
 
     private void Gravity()
@@ -112,6 +122,38 @@ public class PlayerInput : MonoBehaviour
         return number;
     }
 
+    private void openInvent()
+    {
+        if (controls.Player.openInventory.triggered)
+        {
+            if (panelBool)
+            {
+                inventPanel.SetActive(false);
+                setPanel(false);
+                Cursor.lockState = CursorLockMode.Locked;
+                freeLook.m_YAxis.m_MaxSpeed = 1;
+                freeLook.m_XAxis.m_MaxSpeed = 150;
+            }
+            else
+            {
+                inventPanel.SetActive(true);
+                setPanel(true);
+                Cursor.lockState = CursorLockMode.None;
+                freeLook.m_YAxis.m_MaxSpeed = 0;
+                freeLook.m_XAxis.m_MaxSpeed = 0;
+            }
+        }
+    }
+
+    public void setPanel(bool b)
+    {
+        panelBool = b;
+    }
+
+    public bool getpanel()
+    {
+        return panelBool;
+    }
 
     private void OnEnable()
     {

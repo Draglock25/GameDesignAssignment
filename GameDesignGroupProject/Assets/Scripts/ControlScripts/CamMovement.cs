@@ -10,8 +10,9 @@ public class CamMovement : MonoBehaviour
     private Vector2 mousePosition;
     private float xRotation;
     [SerializeField] private Transform playerBody;
+    [SerializeField] private PlayerInput PInputs;
 
-    void Awake()
+   void Awake()
     {
         playerBody = transform.parent;
 
@@ -21,7 +22,11 @@ public class CamMovement : MonoBehaviour
 
     void Update()
     {
-        Look();
+        if (PInputs.getpanel() == false)
+        {
+            Look();
+        }
+        
     }
 
     private void Look()
