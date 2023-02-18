@@ -33,6 +33,7 @@ public class PlayerInput : MonoBehaviour
         controller = GetComponent<CharacterController>();
         mainCam = Camera.main.transform;
         Cursor.lockState = CursorLockMode.Locked;
+        panelBool = false;
     }
 
     void Update()
