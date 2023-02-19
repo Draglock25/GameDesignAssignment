@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PickUpItem : MonoBehaviour
@@ -12,6 +13,7 @@ public class PickUpItem : MonoBehaviour
     public Material material1;
     public Material material2;
     public Renderer rend;
+    public UnityEvent Event;
 
     // Start is called before the first frame update
     void Awake()
@@ -38,6 +40,7 @@ public class PickUpItem : MonoBehaviour
         if (inRange && controls.Player.Interact.triggered)
         {
             Debug.Log("Item has been picked up!");
+            Event.Invoke();
             Destroy(gb);
         }
     }
@@ -68,7 +71,7 @@ public class PickUpItem : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             inRange = false;
-            Destroy(gb);
+            
         }
     }
 
