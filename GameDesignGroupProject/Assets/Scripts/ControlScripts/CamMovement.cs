@@ -17,7 +17,7 @@ public class CamMovement : MonoBehaviour
         playerBody = transform.parent;
 
         controls = new Inputs();
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()

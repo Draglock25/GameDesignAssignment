@@ -52,7 +52,7 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 },
                 {
                     ""name"": ""Interact"",
@@ -76,6 +76,69 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                     ""name"": ""Item1"",
                     ""type"": ""Button"",
                     ""id"": ""2f3a0ebc-bca2-4e40-a748-8f30bcb8742e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Item2"",
+                    ""type"": ""Button"",
+                    ""id"": ""b65513b3-7472-4111-a3c7-143a94a9038d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Item3"",
+                    ""type"": ""Button"",
+                    ""id"": ""c3ae7ebf-be3c-4967-88b3-d1d86b7046ca"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Item4"",
+                    ""type"": ""Button"",
+                    ""id"": ""64f3814e-95ff-44fb-b59b-2ed2998c9bb8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Item5"",
+                    ""type"": ""Button"",
+                    ""id"": ""9d2f08f9-9aab-4c88-8142-ec0b229d8e94"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Item6"",
+                    ""type"": ""Button"",
+                    ""id"": ""143deb74-1ad8-46ad-980e-68acc9490b1f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Item7"",
+                    ""type"": ""Button"",
+                    ""id"": ""c58516a3-d79b-424b-b54a-45f3dd83dfe4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""openInventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""766e9f4f-a595-4213-9c8f-8f04151da319"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -272,6 +335,83 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                     ""action"": ""SwapWeapon2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""20417a2d-867d-49e3-bec1-3a9d7b55baea"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Item2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""58a86715-761c-432d-a0e5-a586b3667601"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Item3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ae1b41ba-daaa-4d74-bc79-8944cbfb5a56"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Item4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c153a509-1ac3-4257-b4ea-88f3e63e80ce"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Item5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cc52ee08-df8d-4aab-b56f-df45b1eee607"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Item6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""51fd26bd-fe01-40b4-9dd6-77fc9a90e9c4"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Item7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""50328423-fb50-4272-91c4-a57394d0ab04"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""openInventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -286,6 +426,13 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_CamControl = m_Player.FindAction("CamControl", throwIfNotFound: true);
         m_Player_Item1 = m_Player.FindAction("Item1", throwIfNotFound: true);
+        m_Player_Item2 = m_Player.FindAction("Item2", throwIfNotFound: true);
+        m_Player_Item3 = m_Player.FindAction("Item3", throwIfNotFound: true);
+        m_Player_Item4 = m_Player.FindAction("Item4", throwIfNotFound: true);
+        m_Player_Item5 = m_Player.FindAction("Item5", throwIfNotFound: true);
+        m_Player_Item6 = m_Player.FindAction("Item6", throwIfNotFound: true);
+        m_Player_Item7 = m_Player.FindAction("Item7", throwIfNotFound: true);
+        m_Player_openInventory = m_Player.FindAction("openInventory", throwIfNotFound: true);
         m_Player_Reload = m_Player.FindAction("Reload", throwIfNotFound: true);
         m_Player_Holster = m_Player.FindAction("Holster", throwIfNotFound: true);
         m_Player_SwapWeapon1 = m_Player.FindAction("SwapWeapon1", throwIfNotFound: true);
@@ -355,6 +502,13 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_CamControl;
     private readonly InputAction m_Player_Item1;
+    private readonly InputAction m_Player_Item2;
+    private readonly InputAction m_Player_Item3;
+    private readonly InputAction m_Player_Item4;
+    private readonly InputAction m_Player_Item5;
+    private readonly InputAction m_Player_Item6;
+    private readonly InputAction m_Player_Item7;
+    private readonly InputAction m_Player_openInventory;
     private readonly InputAction m_Player_Reload;
     private readonly InputAction m_Player_Holster;
     private readonly InputAction m_Player_SwapWeapon1;
@@ -369,6 +523,13 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @CamControl => m_Wrapper.m_Player_CamControl;
         public InputAction @Item1 => m_Wrapper.m_Player_Item1;
+        public InputAction @Item2 => m_Wrapper.m_Player_Item2;
+        public InputAction @Item3 => m_Wrapper.m_Player_Item3;
+        public InputAction @Item4 => m_Wrapper.m_Player_Item4;
+        public InputAction @Item5 => m_Wrapper.m_Player_Item5;
+        public InputAction @Item6 => m_Wrapper.m_Player_Item6;
+        public InputAction @Item7 => m_Wrapper.m_Player_Item7;
+        public InputAction @openInventory => m_Wrapper.m_Player_openInventory;
         public InputAction @Reload => m_Wrapper.m_Player_Reload;
         public InputAction @Holster => m_Wrapper.m_Player_Holster;
         public InputAction @SwapWeapon1 => m_Wrapper.m_Player_SwapWeapon1;
@@ -400,6 +561,27 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                 @Item1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItem1;
                 @Item1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItem1;
                 @Item1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItem1;
+                @Item2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItem2;
+                @Item2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItem2;
+                @Item2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItem2;
+                @Item3.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItem3;
+                @Item3.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItem3;
+                @Item3.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItem3;
+                @Item4.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItem4;
+                @Item4.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItem4;
+                @Item4.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItem4;
+                @Item5.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItem5;
+                @Item5.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItem5;
+                @Item5.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItem5;
+                @Item6.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItem6;
+                @Item6.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItem6;
+                @Item6.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItem6;
+                @Item7.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItem7;
+                @Item7.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItem7;
+                @Item7.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItem7;
+                @openInventory.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenInventory;
+                @openInventory.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenInventory;
+                @openInventory.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenInventory;
                 @Reload.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
                 @Reload.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
                 @Reload.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReload;
@@ -434,6 +616,27 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
                 @Item1.started += instance.OnItem1;
                 @Item1.performed += instance.OnItem1;
                 @Item1.canceled += instance.OnItem1;
+                @Item2.started += instance.OnItem2;
+                @Item2.performed += instance.OnItem2;
+                @Item2.canceled += instance.OnItem2;
+                @Item3.started += instance.OnItem3;
+                @Item3.performed += instance.OnItem3;
+                @Item3.canceled += instance.OnItem3;
+                @Item4.started += instance.OnItem4;
+                @Item4.performed += instance.OnItem4;
+                @Item4.canceled += instance.OnItem4;
+                @Item5.started += instance.OnItem5;
+                @Item5.performed += instance.OnItem5;
+                @Item5.canceled += instance.OnItem5;
+                @Item6.started += instance.OnItem6;
+                @Item6.performed += instance.OnItem6;
+                @Item6.canceled += instance.OnItem6;
+                @Item7.started += instance.OnItem7;
+                @Item7.performed += instance.OnItem7;
+                @Item7.canceled += instance.OnItem7;
+                @openInventory.started += instance.OnOpenInventory;
+                @openInventory.performed += instance.OnOpenInventory;
+                @openInventory.canceled += instance.OnOpenInventory;
                 @Reload.started += instance.OnReload;
                 @Reload.performed += instance.OnReload;
                 @Reload.canceled += instance.OnReload;
@@ -458,6 +661,13 @@ public partial class @Inputs : IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnCamControl(InputAction.CallbackContext context);
         void OnItem1(InputAction.CallbackContext context);
+        void OnItem2(InputAction.CallbackContext context);
+        void OnItem3(InputAction.CallbackContext context);
+        void OnItem4(InputAction.CallbackContext context);
+        void OnItem5(InputAction.CallbackContext context);
+        void OnItem6(InputAction.CallbackContext context);
+        void OnItem7(InputAction.CallbackContext context);
+        void OnOpenInventory(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
         void OnHolster(InputAction.CallbackContext context);
         void OnSwapWeapon1(InputAction.CallbackContext context);

@@ -12,16 +12,21 @@ public class PlayerInput : MonoBehaviour
     private float moveSpeed = 6f;
     private Vector3 velocity;
     private float gravity = -9.81f;
-    private Vector2 move;
     private float jumpHeight = 2.4f;
     private CharacterController controller;
     private Transform mainCam;
+
+    [SerializeField]
+    private Transform model;
 
     public Transform ground;
     public float distanceToGround = 0.4f;
     public LayerMask groundMask;
     private bool isGrounded;
     public int number = 0;
+
+    [SerializeField]
+    private float rotationSpeed = 4f;
 
     public CinemachineFreeLook freeLook;
     public GameObject inventPanel;
@@ -31,9 +36,13 @@ public class PlayerInput : MonoBehaviour
     {
         controls = new Inputs();
         controller = GetComponent<CharacterController>();
-        mainCam = Camera.main.transform;
         Cursor.lockState = CursorLockMode.Locked;
         panelBool = false;
+    }
+
+    void Start()
+    {
+        mainCam = Camera.main.transform;
     }
 
     void Update()
@@ -47,6 +56,8 @@ public class PlayerInput : MonoBehaviour
         Gravity();
         item();
         openInvent();
+
+       
     }
 
     private void Gravity()
@@ -64,12 +75,18 @@ public class PlayerInput : MonoBehaviour
 
     private void PlayerMovement()
     {
-        move = controls.Player.Move.ReadValue<Vector2>();
-
-        Vector3 movement = (move.y * transform.forward) + (move.x * transform.right);
+        Vector2 moveCtrl = controls.Player.Move.ReadValue<Vector2>();
+        Vector3 movement = new Vector3(moveCtrl.x, 0, moveCtrl.y);
         movement = mainCam.forward * movement.z + mainCam.right * movement.x;
         movement.y = 0f;
         controller.Move(movement * moveSpeed * Time.deltaTime);
+
+        if(moveCtrl != Vector2.zero)
+        {
+            float targetAngel = Mathf.Atan2(moveCtrl.x, moveCtrl.y) * Mathf.Rad2Deg + mainCam.eulerAngles.y;
+            Quaternion rotation = Quaternion.Euler(0f, targetAngel, 0f);
+            model.rotation = Quaternion.Lerp(model.rotation, rotation, Time.deltaTime * rotationSpeed);
+        }
     }
 
     private void Jump()
