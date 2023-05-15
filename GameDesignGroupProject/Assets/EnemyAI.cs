@@ -37,8 +37,8 @@ public class EnemyAI : MonoBehaviour
     /// </summary>
     void Update()
     {
-        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, playerMask);
+        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerMask);
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInSightRange && playerInAttackRange) AttackPlayer();
@@ -48,13 +48,23 @@ public class EnemyAI : MonoBehaviour
         if (!walkPointSet) SearchWalkPoint();
     }
 
+    private void ChasePlayer() {
+
+    }
+
+    private void AttackPlayer() {
+        
+    }
+
     private void SearchWalkPoint() {
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
         float randomX = Random.Range(-walkPointRange, walkPointRange);
 
-        walkPoint new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + rangeZ);
+        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
         
     }
+
+
 
 
 
